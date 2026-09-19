@@ -24,3 +24,14 @@ gate evidence, machine-readable registry, and deliverable templates.
     bash scripts/phase0-audit.sh
 
 Engine dashboard: http://127.0.0.1:8787/goGit
+
+## Live documentation
+
+https://aminul-du.github.io/mCore-dev-docs/
+
+## Phase 0 output
+
+- [Phase 0 Summary](docs/phase0/PHASE0-SUMMARY.md)
+- [Gates G01–G20](docs/phase0/gates/index.tsv)
+- [Evidence](docs/phase0/evidence/)
+- [Deliverables](docs/phase0/deliverables/)
