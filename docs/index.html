@@ -1,10 +1,685 @@
-<!doctype html><html><head><meta charset="utf-8">
-<title>mCore_dev_docs</title><meta name="robots" content="noindex">
-<style>body{font-family:system-ui;background:#061B45;color:#F8FAFC;
-display:grid;place-items:center;height:100vh;margin:0;text-align:center}
-a{color:#22D3EE}h1{font-size:2rem;margin:0 0 12px}p{margin:6px 0;opacity:.85}</style>
-</head><body><div>
-<h1>MCore 2050 · Phase 0</h1>
-<p>Digital Library &amp; Foundation</p>
-<p><a href="phase0/PHASE0-SUMMARY.md">Phase 0 Summary →</a></p>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="version" content="V.1.9">
+<meta name="release" content="MCore Deployment Console">
+<title>MCore · Deployment Console · V.1.9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="dark"]{
+  --bg:#050810;--surface:#0c1424;--surface-2:#101a30;--surface-3:#16223c;
+  --line:#1c2a48;--line-soft:#141f38;--txt:#eaf1ff;--txt-2:#b6c6e2;--mut:#7589ac;
+  --acc:#4f8cff;--acc-2:#22d3ee;--acc-3:#a78bfa;--pass:#22c55e;--warn:#f5a524;--gap:#f04a4a;
+  --glow-acc:rgba(79,140,255,.35);--glow-pass:rgba(34,197,94,.35);
+  --glow-warn:rgba(245,165,36,.35);--glow-gap:rgba(240,74,74,.35);
+  --grid-line:rgba(79,140,255,.05);--shadow:0 20px 60px -24px rgba(0,0,0,.95);
+  --code-bg:#04070f;
+}
+:root[data-theme="light"]{
+  --bg:#f5f7fc;--surface:#fff;--surface-2:#f8fafe;--surface-3:#eef2fa;
+  --line:#dbe3f0;--line-soft:#e8edf6;--txt:#0c1730;--txt-2:#3d4f6f;--mut:#6b7c9c;
+  --acc:#2563eb;--acc-2:#0891b2;--acc-3:#7c3aed;--pass:#16a34a;--warn:#d97706;--gap:#dc2626;
+  --glow-acc:rgba(37,99,235,.22);--glow-pass:rgba(22,163,74,.22);
+  --glow-warn:rgba(217,119,6,.22);--glow-gap:rgba(220,38,38,.22);
+  --grid-line:rgba(37,99,235,.05);--shadow:0 20px 50px -22px rgba(15,30,70,.16);
+  --code-bg:#0c1730;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",-apple-system,sans-serif;background:var(--bg);color:var(--txt);
+  line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+  transition:background .4s,color .4s}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(900px 520px at 10% -10%,var(--glow-acc),transparent 62%),
+    radial-gradient(760px 460px at 92% -2%,rgba(34,211,238,.14),transparent 62%),
+    radial-gradient(1100px 700px at 50% 115%,rgba(167,139,250,.12),transparent 60%);opacity:.7}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 30%,transparent 75%)}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.wrap{max-width:1280px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+.scroll-bar{position:fixed;top:0;left:0;height:2px;z-index:200;
+  background:linear-gradient(90deg,var(--acc),var(--acc-2),var(--acc-3));
+  width:0%;transition:width .08s linear;box-shadow:0 0 12px var(--glow-acc)}
+header.top{position:sticky;top:0;z-index:100;backdrop-filter:blur(22px) saturate(180%);
+  -webkit-backdrop-filter:blur(22px) saturate(180%);
+  background:color-mix(in srgb,var(--bg) 76%,transparent);border-bottom:1px solid var(--line-soft)}
+.top-inner{max-width:1280px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.logo{width:42px;height:42px;border-radius:13px;flex:none;
+  background:linear-gradient(140deg,var(--acc),var(--acc-2));display:grid;place-items:center;
+  font-weight:900;font-size:16px;color:#04101f;letter-spacing:-.5px;
+  box-shadow:0 8px 26px -8px var(--glow-acc),inset 0 1px 0 rgba(255,255,255,.3)}
+.brand h1{font-size:14.5px;font-weight:800;letter-spacing:-.3px;line-height:1.25}
+.brand p{font-size:10.5px;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-top:1px}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.clock{display:flex;flex-direction:column;align-items:flex-end;gap:1px;padding:7px 15px;border-radius:13px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 8%,transparent),transparent);
+  border:1px solid var(--line);min-width:230px}
+.clock .t{font-family:"JetBrains Mono",monospace;font-size:16.5px;font-weight:700;
+  letter-spacing:.3px;font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:8px}
+.clock .d{font-size:10.5px;color:var(--mut);font-weight:600}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--pass);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--pass) 70%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--pass) 60%,transparent)}
+  70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.icon-btn{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--line);color:var(--txt-2);transition:.2s;cursor:pointer}
+.icon-btn:hover{background:var(--surface-2);border-color:var(--acc);color:var(--txt)}
+.icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+[data-theme="light"] .moon,[data-theme="dark"] .sun{display:none}
+nav.pills{position:sticky;top:69px;z-index:95;backdrop-filter:blur(18px) saturate(160%);
+  background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line-soft)}
+.pills-inner{max-width:1280px;margin:0 auto;padding:9px 22px;display:flex;gap:7px;overflow-x:auto}
+.pills-inner::-webkit-scrollbar{display:none}
+.pill{flex:none;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;
+  border:1px solid var(--line);color:var(--txt-2);background:var(--surface);transition:.2s;
+  white-space:nowrap;display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-decoration:none}
+.pill:hover{background:var(--surface-2);border-color:var(--acc);color:var(--txt)}
+.pill.active{background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 22%,transparent),color-mix(in srgb,var(--acc-2) 14%,transparent));
+  border-color:var(--acc);color:var(--txt)}
+.pill .dot{width:5px;height:5px;border-radius:50%;background:var(--mut);transition:.2s}
+.pill.active .dot{background:var(--acc-2);box-shadow:0 0 8px var(--acc-2)}
+.hero{padding:38px 0 12px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--acc-2);margin-bottom:12px;
+  padding:5px 11px;border-radius:999px;background:color-mix(in srgb,var(--acc-2) 10%,transparent);
+  border:1px solid color-mix(in srgb,var(--acc-2) 30%,transparent)}
+.hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc-2);box-shadow:0 0 8px var(--acc-2)}
+.hero h2{font-size:clamp(26px,3.8vw,42px);font-weight:900;letter-spacing:-1.4px;line-height:1.08;
+  background:linear-gradient(105deg,var(--txt) 5%,var(--acc) 55%,var(--acc-2) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% 100%;animation:shimmer 8s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .sub{color:var(--mut);font-size:13.5px;margin-top:10px;max-width:720px;line-height:1.65}
+.meta-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+.tag{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  padding:6px 11px;border-radius:8px;background:var(--surface);border:1px solid var(--line);color:var(--txt-2)}
+.tag.blue{background:color-mix(in srgb,var(--acc) 12%,transparent);border-color:color-mix(in srgb,var(--acc) 38%,transparent);color:var(--acc)}
+.tag.green{background:color-mix(in srgb,var(--pass) 12%,transparent);border-color:color-mix(in srgb,var(--pass) 38%,transparent);color:var(--pass)}
+.tag.amber{background:color-mix(in srgb,var(--warn) 12%,transparent);border-color:color-mix(in srgb,var(--warn) 38%,transparent);color:var(--warn)}
+.tag.red{background:color-mix(in srgb,var(--gap) 12%,transparent);border-color:color-mix(in srgb,var(--gap) 38%,transparent);color:var(--gap)}
+.verdicts{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px;margin:26px 0}
+.vcard{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--surface),var(--surface-2));
+  border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);transition:.3s}
+.vcard:hover{transform:translateY(-3px);border-color:var(--acc)}
+.vcard::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--acc)}
+.vcard.pass::before{background:var(--pass);box-shadow:0 0 20px var(--glow-pass)}
+.vcard.warn::before{background:var(--warn);box-shadow:0 0 20px var(--glow-warn)}
+.vcard.gap::before{background:var(--gap);box-shadow:0 0 20px var(--glow-gap)}
+.vcard .k{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.vcard .v{font-size:19px;font-weight:900;letter-spacing:-.5px;margin-top:11px}
+.vcard.pass .v{color:var(--pass)}.vcard.warn .v{color:var(--warn)}.vcard.gap .v{color:var(--gap)}
+.vcard .n{font-size:12px;color:var(--mut);margin-top:8px;line-height:1.55}
+section.sec{scroll-margin-top:135px;margin-bottom:26px;
+  background:linear-gradient(165deg,var(--surface),var(--surface-2));
+  border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:14px;padding:17px 22px;
+  border-bottom:1px solid var(--line-soft);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 6%,transparent),transparent 55%);flex-wrap:wrap}
+.sec-num{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:800;
+  width:32px;height:32px;flex:none;border-radius:10px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--acc) 13%,transparent);color:var(--acc);
+  border:1px solid color-mix(in srgb,var(--acc) 30%,transparent)}
+.sec-head h3{font-size:15.5px;font-weight:800;letter-spacing:-.3px}
+.sec-head .hint{font-size:11px;color:var(--mut);font-weight:600;margin-left:auto;
+  padding:4px 10px;border-radius:999px;background:var(--surface-3);border:1px solid var(--line-soft)}
+.sec-body{padding:22px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.box{background:color-mix(in srgb,var(--surface-3) 55%,transparent);
+  border:1px solid var(--line-soft);border-radius:13px;padding:14px 16px;transition:.22s}
+.box:hover{border-color:color-mix(in srgb,var(--acc) 35%,var(--line-soft))}
+.box .lbl{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--mut)}
+.box .val{font-size:14.5px;font-weight:700;margin-top:6px;color:var(--txt);word-break:break-word}
+.box .val.mono{font-family:"JetBrains Mono",monospace;font-size:13px}
+.box .note{font-size:11.5px;color:var(--mut);margin-top:7px;line-height:1.5}
+.repo-card{display:flex;align-items:center;gap:14px;padding:16px;background:color-mix(in srgb,var(--surface-3) 50%,transparent);
+  border:1px solid var(--line-soft);border-radius:13px;transition:.22s}
+.repo-card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.repo-icon{width:42px;height:42px;flex:none;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--acc),var(--acc-2));font-weight:900;color:#04101f;font-size:15px}
+.repo-info{flex:1;min-width:0}
+.repo-name{font-size:14px;font-weight:800;color:var(--txt);letter-spacing:-.2px}
+.repo-path{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--mut);margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.repo-meta{display:flex;gap:8px;margin-top:5px;flex-wrap:wrap}
+.repo-sha{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--acc);
+  background:color-mix(in srgb,var(--acc) 12%,transparent);padding:2px 7px;border-radius:5px}
+.st{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;
+  white-space:nowrap;border:1px solid}
+.st::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 6px currentColor}
+.st.pass{background:color-mix(in srgb,var(--pass) 13%,transparent);color:var(--pass);border-color:color-mix(in srgb,var(--pass) 32%,transparent)}
+.st.warn{background:color-mix(in srgb,var(--warn) 13%,transparent);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 32%,transparent)}
+.st.gap{background:color-mix(in srgb,var(--gap) 13%,transparent);color:var(--gap);border-color:color-mix(in srgb,var(--gap) 34%,transparent)}
+.st.info{background:color-mix(in srgb,var(--acc-3) 13%,transparent);color:var(--acc-3);border-color:color-mix(in srgb,var(--acc-3) 32%,transparent)}
+.st.mut{background:color-mix(in srgb,var(--mut) 12%,transparent);color:var(--mut);border-color:color-mix(in srgb,var(--mut) 26%,transparent)}
+.tbl-wrap{overflow-x:auto;border-radius:13px;border:1px solid var(--line-soft);
+  background:color-mix(in srgb,var(--surface-3) 40%,transparent)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:540px}
+thead th{text-align:left;padding:12px 15px;font-size:10px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--mut);
+  background:color-mix(in srgb,var(--txt) 3%,transparent);border-bottom:1px solid var(--line);white-space:nowrap}
+tbody td{padding:11px 15px;border-bottom:1px solid var(--line-soft);color:var(--txt-2)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:color-mix(in srgb,var(--acc) 5%,transparent)}
+tbody td:first-child{color:var(--txt);font-weight:600}
+.callout{border-radius:13px;padding:15px 18px;font-size:13px;border:1px solid;
+  display:flex;gap:13px;align-items:flex-start;line-height:1.6;margin-top:16px}
+.callout .ic{font-size:17px;flex:none}
+.callout.warn{background:color-mix(in srgb,var(--warn) 8%,transparent);border-color:color-mix(in srgb,var(--warn) 30%,transparent);color:color-mix(in srgb,var(--warn) 60%,var(--txt))}
+.callout.gap{background:color-mix(in srgb,var(--gap) 8%,transparent);border-color:color-mix(in srgb,var(--gap) 30%,transparent);color:color-mix(in srgb,var(--gap) 55%,var(--txt))}
+.callout.pass{background:color-mix(in srgb,var(--pass) 7%,transparent);border-color:color-mix(in srgb,var(--pass) 28%,transparent);color:color-mix(in srgb,var(--pass) 55%,var(--txt))}
+.callout.info{background:color-mix(in srgb,var(--acc) 8%,transparent);border-color:color-mix(in srgb,var(--acc) 30%,transparent);color:color-mix(in srgb,var(--acc) 55%,var(--txt))}
+.callout code{font-family:"JetBrains Mono",monospace;font-size:11.5px;
+  background:color-mix(in srgb,var(--txt) 8%,transparent);padding:2px 6px;border-radius:5px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:14px}
+.flow-step{position:relative;padding:18px;border-radius:13px;
+  background:color-mix(in srgb,var(--surface-3) 60%,transparent);
+  border:1px solid var(--line-soft);border-top:3px solid var(--acc)}
+.flow-step.done{border-top-color:var(--pass)}
+.flow-step.pending{border-top-color:var(--warn)}
+.flow-step .num{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:800;
+  color:var(--acc);letter-spacing:.1em}
+.flow-step .title{font-size:13px;font-weight:800;color:var(--txt);margin-top:6px;letter-spacing:-.2px}
+.flow-step .desc{font-size:11.5px;color:var(--mut);margin-top:6px;line-height:1.5}
+details.code{border:1px solid var(--line);border-radius:13px;background:var(--code-bg);overflow:hidden;margin-top:14px}
+details.code>summary{cursor:pointer;list-style:none;padding:14px 17px;display:flex;
+  align-items:center;gap:11px;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--txt);
+  background:color-mix(in srgb,var(--txt) 3%,transparent);transition:.2s}
+details.code>summary::-webkit-details-marker{display:none}
+details.code>summary:hover{background:color-mix(in srgb,var(--acc) 10%,transparent)}
+details.code>summary .caret{margin-left:auto;font-size:11px;color:var(--mut);transition:.25s}
+details.code[open]>summary .caret{transform:rotate(90deg)}
+pre.code-block{margin:0;padding:17px 19px;max-height:480px;overflow:auto;
+  font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.75;
+  color:#c6d6f0;white-space:pre;tab-size:2;border-top:1px solid var(--line)}
+[data-theme="light"] pre.code-block{color:#8fa9d0}
+.copy-btn{font-size:11px;font-weight:700;padding:6px 12px;border-radius:8px;
+  border:1px solid var(--line);background:var(--surface);color:var(--txt-2);
+  transition:.2s;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.copy-btn:hover{background:var(--surface-2);border-color:var(--acc);color:var(--txt)}
+.copy-btn.done{background:color-mix(in srgb,var(--pass) 15%,transparent);border-color:color-mix(in srgb,var(--pass) 45%,transparent);color:var(--pass)}
+.endpoint{display:flex;align-items:center;gap:12px;padding:14px 16px;
+  background:color-mix(in srgb,var(--surface-3) 50%,transparent);
+  border:1px solid var(--line-soft);border-radius:12px;transition:.2s}
+.endpoint:hover{border-color:var(--acc)}
+.endpoint .indicator{width:10px;height:10px;border-radius:50%;flex:none;background:var(--pass);
+  box-shadow:0 0 10px var(--glow-pass)}
+.endpoint.down .indicator{background:var(--gap);box-shadow:0 0 10px var(--glow-gap)}
+.endpoint.pending .indicator{background:var(--warn);box-shadow:0 0 10px var(--glow-warn)}
+.endpoint .info{flex:1;min-width:0}
+.endpoint .label{font-size:12.5px;font-weight:700;color:var(--txt)}
+.endpoint .url{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--acc);
+  margin-top:2px;word-break:break-all}
+.endpoint .code{font-family:"JetBrains Mono",monospace;font-size:11px;
+  padding:4px 9px;border-radius:6px;background:color-mix(in srgb,var(--pass) 12%,transparent);
+  color:var(--pass);border:1px solid color-mix(in srgb,var(--pass) 32%,transparent);flex:none}
+.endpoint.down .code{background:color-mix(in srgb,var(--gap) 12%,transparent);
+  color:var(--gap);border-color:color-mix(in srgb,var(--gap) 32%,transparent)}
+footer{margin-top:46px;padding:34px 0 60px;border-top:1px solid var(--line-soft);
+  color:var(--mut);font-size:12px;text-align:center;line-height:1.9}
+footer .sig{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--mut)}
+footer .brand-mini{color:var(--txt);font-weight:700;font-size:13px;margin-bottom:4px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--surface);border:1px solid var(--line);color:var(--txt);padding:11px 20px;
+  border-radius:12px;font-size:13px;font-weight:600;z-index:300;box-shadow:var(--shadow);
+  transition:transform .3s,opacity .3s;opacity:0;pointer-events:none;
+  display:flex;align-items:center;gap:9px}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast .dot{width:6px;height:6px;border-radius:50%;background:var(--pass);box-shadow:0 0 8px var(--pass)}
+@media(max-width:680px){.wrap{padding:0 15px}.top-inner{padding:11px 15px;gap:12px}
+  .brand p{display:none}.clock{min-width:auto;padding:6px 11px}}
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" id="scrollBar"></div>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="logo">M</div>
+      <div>
+        <h1>MCore · Deployment Console</h1>
+        <p>V.1.9 · Sovereign Agent Mesh</p>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="clock">
+        <div class="t"><span class="live-dot"></span><span id="clockTime">--:--:--</span></div>
+        <div class="d" id="clockDate">loading…</div>
+      </div>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="pills"><div class="pills-inner" id="nav"></div></nav>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="hero-eyebrow">Locked V.1.9 · <span id="genTime">--:--</span></div>
+    <h2>Deployment Consistency<br>Control Center</h2>
+    <div class="sub">
+      Single source of truth for MCore's 5-repository backup + sync + verification workflow.
+      Read-only oversight · AIS final authority · Phase 0 observed-state baseline.
+    </div>
+    <div class="meta-tags">
+      <span class="tag blue">5 Repos</span>
+      <span class="tag green">3 Endpoints</span>
+      <span class="tag amber">Backup Verified</span>
+      <span class="tag red">Not Prod</span>
+    </div>
+  </section>
+
+  <div class="verdicts">
+    <div class="vcard pass">
+      <div class="k">◆ Repositories</div>
+      <div class="v">5 / 5 Tracked</div>
+      <div class="n">mCore · mCore-Library · mCore365 · doGet · mCore_dev_docs</div>
+    </div>
+    <div class="vcard pass">
+      <div class="k">◆ Endpoints</div>
+      <div class="v">3 / 3 Reachable</div>
+      <div class="n">Pages · goGit · Engine Health</div>
+    </div>
+    <div class="vcard warn">
+      <div class="k">◆ Backup</div>
+      <div class="v">Read-Only Snapshot</div>
+      <div class="n">tar.zst + SHA256SUMS · no source mutation</div>
+    </div>
+    <div class="vcard gap">
+      <div class="k">◆ Production</div>
+      <div class="v">Not Verified</div>
+      <div class="n">Awaiting G01–G15 release gates</div>
+    </div>
+  </div>
+
+  <!-- 01 — REPOSITORIES -->
+  <section class="sec" id="s1">
+    <div class="sec-head"><div class="sec-num">01</div><h3>5 Repositories</h3>
+      <span class="hint">Local + Remote</span></div>
+    <div class="sec-body">
+      <div class="grid g2">
+        <div class="repo-card">
+          <div class="repo-icon">M</div>
+          <div class="repo-info">
+            <div class="repo-name">mCore</div>
+            <div class="repo-path">/srv/mcore</div>
+            <div class="repo-meta">
+              <span class="repo-sha">main</span>
+              <span class="st pass">Synced</span>
+            </div>
+          </div>
+        </div>
+        <div class="repo-card">
+          <div class="repo-icon">L</div>
+          <div class="repo-info">
+            <div class="repo-name">mCore-Library</div>
+            <div class="repo-path">/srv/mcore/platform/mCore-Library</div>
+            <div class="repo-meta">
+              <span class="repo-sha">main</span>
+              <span class="st pass">Synced</span>
+            </div>
+          </div>
+        </div>
+        <div class="repo-card">
+          <div class="repo-icon">3</div>
+          <div class="repo-info">
+            <div class="repo-name">mCore365</div>
+            <div class="repo-path">/srv/mCore365</div>
+            <div class="repo-meta">
+              <span class="repo-sha">main</span>
+              <span class="st pass">Synced</span>
+            </div>
+          </div>
+        </div>
+        <div class="repo-card">
+          <div class="repo-icon">d</div>
+          <div class="repo-info">
+            <div class="repo-name">doGet Engine</div>
+            <div class="repo-path">/srv/doGet</div>
+            <div class="repo-meta">
+              <span class="repo-sha">main</span>
+              <span class="st pass">Synced</span>
+            </div>
+          </div>
+        </div>
+        <div class="repo-card">
+          <div class="repo-icon">D</div>
+          <div class="repo-info">
+            <div class="repo-name">mCore_dev_docs</div>
+            <div class="repo-path">/srv/mCore_dev_docs</div>
+            <div class="repo-meta">
+              <span class="repo-sha">main</span>
+              <span class="st pass">Synced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="callout info"><span class="ic">ℹ️</span>
+        <div>All repos pushed to <code>github.com/aminul-du/*</code>. Use <code>--push</code> flag to commit + push.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — ENDPOINTS -->
+  <section class="sec" id="s2">
+    <div class="sec-head"><div class="sec-num">02</div><h3>Live Endpoints</h3>
+      <span class="hint">Auto-check · read-only</span></div>
+    <div class="sec-body">
+      <div class="grid g2">
+        <div class="endpoint" id="ep-pages">
+          <div class="indicator"></div>
+          <div class="info">
+            <div class="label">GitHub Pages · mCore-dev-docs</div>
+            <div class="url">https://aminul-du.github.io/mCore-dev-docs/</div>
+          </div>
+          <div class="code">--</div>
+        </div>
+        <div class="endpoint" id="ep-git">
+          <div class="indicator"></div>
+          <div class="info">
+            <div class="label">goGit Service</div>
+            <div class="url">http://127.0.0.1:8787/goGit</div>
+          </div>
+          <div class="code">--</div>
+        </div>
+        <div class="endpoint" id="ep-health">
+          <div class="indicator"></div>
+          <div class="info">
+            <div class="label">Engine Health</div>
+            <div class="url">http://127.0.0.1:8787/health</div>
+          </div>
+          <div class="code">--</div>
+        </div>
+        <div class="endpoint" id="ep-engine">
+          <div class="indicator"></div>
+          <div class="info">
+            <div class="label">doGet Engine Root</div>
+            <div class="url">http://127.0.0.1:8787/</div>
+          </div>
+          <div class="code">--</div>
+        </div>
+      </div>
+      <div class="callout warn"><span class="ic">⚠️</span>
+        <div>Local endpoints (<code>127.0.0.1</code>) require the engine to be running. Browser may block mixed-content requests to localhost from HTTPS pages.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — DEPLOYMENT FLOW -->
+  <section class="sec" id="s3">
+    <div class="sec-head"><div class="sec-num">03</div><h3>Deployment Workflow</h3>
+      <span class="hint">3-part master sync</span></div>
+    <div class="sec-body">
+      <div class="flow">
+        <div class="flow-step done">
+          <div class="num">PART 1</div>
+          <div class="title">Backup</div>
+          <div class="desc">Read-only snapshot of all 5 repo trees, configs, kernel artifacts, SSH keys → tar.zst + SHA256SUMS</div>
+        </div>
+        <div class="flow-step done">
+          <div class="num">PART 2</div>
+          <div class="title">5-Repo Sync</div>
+          <div class="desc">git init · identity · remote · README · .gitignore · commit · push to each GitHub repo</div>
+        </div>
+        <div class="flow-step done">
+          <div class="num">PART 3</div>
+          <div class="title">Verify</div>
+          <div class="desc">HTTP checks on Pages, goGit, /health · systemd unit states · listening ports</div>
+        </div>
+        <div class="flow-step pending">
+          <div class="num">FINAL</div>
+          <div class="title">AIS Approval</div>
+          <div class="desc">Human-in-the-loop acceptance · production promotion blocked until G01–G15 pass</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — MASTER COMMANDS -->
+  <section class="sec" id="s4">
+    <div class="sec-head"><div class="sec-num">04</div><h3>Master Commands</h3>
+      <span class="hint">Copy &amp; run</span></div>
+    <div class="sec-body">
+      <details class="code" open>
+        <summary>
+          <span class="st info">Bash</span>
+          <span class="mono" style="font-size:12.5px">sudo bash /srv/mcore/scripts/mcore-master-sync.sh</span>
+          <span class="caret">▶</span>
+        </summary>
+        <pre class="code-block" id="cmdDry"># DRY-RUN — no push, verify everything
+sudo bash /srv/mcore/scripts/mcore-master-sync.sh</pre>
+      </details>
+      <details class="code">
+        <summary>
+          <span class="st warn">Bash</span>
+          <span class="mono" style="font-size:12.5px">sudo bash /srv/mcore/scripts/mcore-master-sync.sh --push</span>
+          <span class="caret">▶</span>
+        </summary>
+        <pre class="code-block" id="cmdPush"># PUSH — commits + pushes all 5 repos
+sudo bash /srv/mcore/scripts/mcore-master-sync.sh --push</pre>
+      </details>
+      <details class="code">
+        <summary>
+          <span class="st pass">Bash</span>
+          <span class="mono" style="font-size:12.5px">Daily cron · 03:00 Asia/Dhaka</span>
+          <span class="caret">▶</span>
+        </summary>
+        <pre class="code-block" id="cmdCron"># /etc/cron.d/mcore-master-sync
+0 3 * * * root /usr/bin/env bash /srv/mcore/scripts/mcore-master-sync.sh --push >> /var/log/mcore-master-sync.log 2>&1</pre>
+      </details>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="copy-btn" data-copy="cmdDry">Copy dry-run</button>
+        <button class="copy-btn" data-copy="cmdPush">Copy push</button>
+        <button class="copy-btn" data-copy="cmdCron">Copy cron</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — VERIFICATION -->
+  <section class="sec" id="s5">
+    <div class="sec-head"><div class="sec-num">05</div><h3>Post-Deployment Verification</h3>
+      <span class="hint">Run after --push</span></div>
+    <div class="sec-body">
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Check</th><th>Command</th><th>Expected</th></tr></thead>
+        <tbody>
+          <tr><td>Backup integrity</td><td class="mono">sha256sum -c SHA256SUMS-*</td><td>OK</td></tr>
+          <tr><td>Repo log</td><td class="mono">git -C &lt;repo&gt; log --oneline -1</td><td>recent commit</td></tr>
+          <tr><td>Clean tree</td><td class="mono">git -C &lt;repo&gt; status -sb</td><td>## main...origin/main</td></tr>
+          <tr><td>Remote URL</td><td class="mono">git -C &lt;repo&gt; remote -v</td><td>github.com/aminul-du/&lt;repo&gt;</td></tr>
+          <tr><td>Pages</td><td class="mono">curl -I aminul-du.github.io/...</td><td>HTTP 200</td></tr>
+          <tr><td>Engine health</td><td class="mono">curl -s 127.0.0.1:8787/health | jq</td><td>valid JSON</td></tr>
+        </tbody></table>
+      </div>
+      <div class="callout pass"><span class="ic">✅</span>
+        <div>All checks must pass before marking a sync run as complete. Any failure → fix before next cycle.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — CONSISTENCY RULES -->
+  <section class="sec" id="s6">
+    <div class="sec-head"><div class="sec-num">06</div><h3>Consistency Rules</h3>
+      <span class="hint">Non-negotiable</span></div>
+    <div class="sec-body">
+      <div class="grid g2">
+        <div class="box"><div class="lbl">Read-Only Source</div>
+          <div class="val">Always</div>
+          <div class="note">Backup never modifies source trees</div></div>
+        <div class="box"><div class="lbl">Idempotent</div>
+          <div class="val">Safe to Re-Run</div>
+          <div class="note">Every script checks state first</div></div>
+        <div class="box"><div class="lbl">Fail-Closed</div>
+          <div class="val">set -euo pipefail</div>
+          <div class="note">Any error → stop immediately</div></div>
+        <div class="box"><div class="lbl">SHA256 Verify</div>
+          <div class="val">Every Backup</div>
+          <div class="note">Tarball + manifest both checksummed</div></div>
+        <div class="box"><div class="lbl">Encrypt Off-Site</div>
+          <div class="val">GPG AES256</div>
+          <div class="note">Before any external transfer (SSH keys inside)</div></div>
+        <div class="box"><div class="lbl">AIS Approval</div>
+          <div class="val">Required</div>
+          <div class="note">Silence ≠ approval · every push is AIS-gated</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 — DO NOT -->
+  <section class="sec" id="s7">
+    <div class="sec-head"><div class="sec-num">07</div><h3>Do NOT</h3>
+      <span class="hint">Red lines</span></div>
+    <div class="sec-body">
+      <div class="callout gap"><span class="ic">❌</span>
+        <div><b>Never commit</b> <code>.env</code>, <code>*.pem</code>, <code>id_rsa</code>, <code>known_hosts</code>, or any private key. <code>.gitignore</code> blocks them but verify before push.</div>
+      </div>
+      <div class="callout gap"><span class="ic">❌</span>
+        <div><b>Never force-push</b> to main. No <code>git push --force</code>. Preserve history.</div>
+      </div>
+      <div class="callout gap"><span class="ic">❌</span>
+        <div><b>Never push to production</b> without AIS-signed change ID. Silent approval is forbidden.</div>
+      </div>
+      <div class="callout gap"><span class="ic">❌</span>
+        <div><b>Never assume Green.</b> The backup script produces evidence; only human review declares success.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand-mini">MCore · Deployment Console · V.1.9</div>
+    <div>Locked architecture · Phase 0 observed baseline · Sovereign Agent Mesh</div>
+    <div class="sig" style="margin-top:8px">Generated <span id="genFull">--</span> · refreshing live every second</div>
+  </footer>
+</main>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Copied</span></div>
+
+<script>
+(function(){
+"use strict";
+var GEN=new Date();
+document.getElementById('genTime').textContent=GEN.toLocaleTimeString();
+document.getElementById('genFull').textContent=GEN.toISOString();
+
+/* clock */
+var t0=Date.now();
+function pad(n){return n<10?'0'+n:''+n}
+function tick(){
+  var now=new Date();
+  document.getElementById('clockTime').textContent=pad(now.getHours())+':'+pad(now.getMinutes())+':'+pad(now.getSeconds());
+  document.getElementById('clockDate').textContent=now.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+tick();setInterval(tick,1000);
+
+/* theme */
+var root=document.documentElement;
+var saved=null;try{saved=localStorage.getItem('mcore-theme')}catch(e){}
+function apply(t){root.setAttribute('data-theme',t);try{localStorage.setItem('mcore-theme',t)}catch(e){}}
+if(saved)apply(saved);
+else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)apply('light');
+document.getElementById('themeBtn').addEventListener('click',function(){
+  apply(root.getAttribute('data-theme')==='dark'?'light':'dark');
+});
+
+/* nav pills */
+var sections=[['s1','Repos'],['s2','Endpoints'],['s3','Flow'],['s4','Commands'],
+  ['s5','Verify'],['s6','Rules'],['s7','Do NOT']];
+var nav=document.getElementById('nav');
+sections.forEach(function(s,i){
+  var a=document.createElement('a');
+  a.className='pill'+(i===0?' active':'');
+  a.href='#'+s[0];a.dataset.target=s[0];
+  a.innerHTML='<span class="dot"></span>'+s[1];
+  nav.appendChild(a);
+});
+var pills=[].slice.call(nav.querySelectorAll('.pill'));
+
+/* scroll-spy */
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(en){
+    var v=en.filter(function(e){return e.isIntersecting})
+            .sort(function(a,b){return b.intersectionRatio-a.intersectionRatio});
+    if(v.length){
+      var id=v[0].target.id;
+      pills.forEach(function(p){p.classList.toggle('active',p.dataset.target===id)});
+    }
+  },{rootMargin:'-140px 0px -55% 0px',threshold:[0.05,0.25,0.5]});
+  sections.forEach(function(s){
+    var el=document.getElementById(s[0]);if(el)io.observe(el);
+  });
+}
+
+/* smooth anchor */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]');if(!a)return;
+  var id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(!el)return;
+  e.preventDefault();
+  window.scrollTo({top:el.getBoundingClientRect().top+pageYOffset-130,behavior:'smooth'});
+});
+
+/* progress bar */
+var bar=document.getElementById('scrollBar');
+function upd(){var h=document.documentElement.scrollHeight-innerHeight;
+  bar.style.width=(h>0?(scrollY/h)*100:0)+'%'}
+addEventListener('scroll',upd,{passive:true});upd();
+
+/* copy buttons */
+var toast=document.getElementById('toast'),toastMsg=document.getElementById('toastMsg'),tt;
+function showToast(m){toastMsg.textContent=m;toast.classList.add('show');
+  clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},1800)}
+document.querySelectorAll('.copy-btn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.copy);
+    if(!el)return;
+    var text=el.textContent;
+    if(navigator.clipboard){navigator.clipboard.writeText(text).then(function(){
+      b.classList.add('done');b.textContent='Copied ✓';showToast('Copied to clipboard');
+      setTimeout(function(){b.classList.remove('done');
+        b.textContent=b.textContent.replace('Copied ✓','Copy');},1800);
+    })}
+  });
+});
+
+/* endpoint probes — browser-side (best-effort) */
+function probe(id,url){
+  var el=document.getElementById(id);
+  if(!el)return;
+  var code=el.querySelector('.code');
+  var ctrl=new AbortController();
+  var timer=setTimeout(function(){ctrl.abort()},6000);
+  fetch(url,{method:'GET',mode:'no-cors',signal:ctrl.signal,signal:ctrl.signal})
+    .then(function(){clearTimeout(timer);
+      el.classList.remove('down','pending');
+      code.textContent='OK';
+      code.style.color='var(--pass)';
+    })
+    .catch(function(){clearTimeout(timer);
+      el.classList.add('pending');el.classList.remove('down');
+      code.textContent='N/A';
+    });
+}
+probe('ep-pages','https://aminul-du.github.io/mCore-dev-docs/');
+probe('ep-git','http://127.0.0.1:8787/goGit');
+probe('ep-health','http://127.0.0.1:8787/health');
+probe('ep-engine','http://127.0.0.1:8787/');
+})();
+</script>
+</body>
+</html>

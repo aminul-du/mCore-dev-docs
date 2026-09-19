@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>mCore_dev_docs</title><meta name="robots" content="noindex">
+<style>body{font-family:system-ui;background:#061B45;color:#F8FAFC;
+display:grid;place-items:center;height:100vh;margin:0;text-align:center}
+a{color:#22D3EE}h1{font-size:2rem;margin:0 0 12px}p{margin:6px 0;opacity:.85}</style>
+</head><body><div>
+<h1>MCore 2050 · Phase 0</h1>
+<p>Digital Library &amp; Foundation</p>
+<p><a href="phase0/PHASE0-SUMMARY.md">Phase 0 Summary →</a></p>
+</div></body></html>
