@@ -1,0 +1,7 @@
+# G11 · Authentication probe (headers only)
+# Timestamp: 2026-09-19T19:14:27Z
+
+  no response
+
+# Looking for: cf-access-*, cf-ray, www-authenticate
+# Status: UNKNOWN — pending Cloudflare Access review

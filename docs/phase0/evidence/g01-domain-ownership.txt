@@ -1,0 +1,372 @@
+# G01 · Domain ownership (whois)
+# Timestamp: 2026-09-19T19:14:27Z
+
+### meticulouscore.com
+   Creation Date: 2026-02-13T08:26:56Z
+   Registry Expiry Date: 2028-02-13T08:26:56Z
+   Registrar: Netregistry Wholesale Pty Ltd
+   Domain Status: clientHold https://icann.org/epp#clientHold
+   Name Server: NS3.A2HOSTING.COM
+   Name Server: NS4.A2HOSTING.COM
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-02-13T08:26:56
+Registrar: Webcentral Group Ltd
+Domain Status: clientHold https://icann.org/epp#clientHold
+Registry Registrant ID: 
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY 
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Dhaka
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: BD
+
+### meticulouscore.net
+date of the domain name registrant's agreement with the sponsoring
+  (no whois data)
+
+### meticulouscore.dev
+  (no whois data)
+
+### mcore360.com
+   Creation Date: 2026-08-09T21:41:42Z
+   Registry Expiry Date: 2028-08-09T21:41:42Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-09T21:41:42Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcoreacademy.com
+   Creation Date: 2026-08-09T21:44:39Z
+   Registry Expiry Date: 2028-08-09T21:44:39Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-09T21:44:39Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcoreai.com
+   Creation Date: 2026-07-26T21:40:52Z
+   Registry Expiry Date: 2028-07-26T21:40:52Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-07-26T21:40:52Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcoreai.cloud
+Creation Date: 2026-09-05T14:14:57.653Z
+Registry Expiry Date: 2028-09-05T14:14:57.653Z
+Registrar: Cloudflare
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Name Server: uriah.ns.cloudflare.com
+Name Server: rafe.ns.cloudflare.com
+
+### mcoreai.dev
+  (no whois data)
+
+### mcorefabric.com
+   Creation Date: 2026-08-20T00:54:56Z
+   Registry Expiry Date: 2028-08-20T00:54:56Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-20T00:54:56Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcoremesh.com
+   Creation Date: 2026-08-20T01:01:20Z
+   Registry Expiry Date: 2028-08-20T01:01:20Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-20T01:01:20Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcoreshield.com
+   Creation Date: 2026-08-25T20:44:17Z
+   Registry Expiry Date: 2028-08-25T20:44:17Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-25T20:44:17Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcorecare.com
+   Creation Date: 2026-08-09T22:07:52Z
+   Registry Expiry Date: 2028-08-09T22:07:52Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-09T22:07:52Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### mcoreprime.com
+   Creation Date: 2026-06-30T21:13:57Z
+   Registry Expiry Date: 2029-06-30T21:13:57Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-06-30T21:13:57Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### kotlinbrain.com
+   Creation Date: 2026-08-17T13:36:52Z
+   Registry Expiry Date: 2027-08-17T13:36:52Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-17T13:36:52Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### shorbornoai.com
+   Creation Date: 2026-09-01T15:41:48Z
+   Registry Expiry Date: 2028-09-01T15:41:48Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-09-01T15:41:48Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### shorborno.ai
+Creation Date: 2026-09-14T17:18:46Z
+Registry Expiry Date: 2028-09-14T17:18:46Z
+Registrar: Cloudflare, Inc
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 2f6fdb7bcc77493c9261224081c79759-DONUTS
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: DATA REDACTED
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: domaincontact-cloudflareregistrar-com@cloudflareregistrar.com
+Name Server: rafe.ns.cloudflare.com
+Name Server: uriah.ns.cloudflare.com
+Terms of Use: Access to WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the registry database. The data in this record is provided by Identity Digital or the Registry Operator for informational purposes only, and accuracy is not guaranteed. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Identity Digital except as reasonably necessary to register domain names or modify existing registrations. When using the Whois service, please consider the following: The Whois service is not a replacement for standard EPP commands to the SRS service. Whois is not considered authoritative for registered domain objects. The Whois service may be scheduled for downtime during production or OT&E maintenance periods. Queries to the Whois services are throttled. If too many queries are received from a single IP address within a specified time, the service will begin to reject further queries for a period of time to prevent disruption of Whois service access. Abuse of the Whois system through data mining is mitigated by detecting and limiting bulk query access from single sources. Where applicable, the presence of a [Non-Public Data] tag indicates that such data is not made publicly available due to applicable data privacy laws or requirements. Should you wish to contact the registrant, please refer to the Whois records available through the registrar URL listed above. Access to non-public data may be provided, upon request, where it can be re
+
+### sorbornoai.com
+   Creation Date: 2026-08-20T01:46:33Z
+   Registry Expiry Date: 2029-08-20T01:46:33Z
+   Registrar: Cloudflare, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: RAFE.NS.CLOUDFLARE.COM
+   Name Server: URIAH.NS.CLOUDFLARE.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2026-08-20T01:46:33Z
+Registrar: Cloudflare, Inc.
+Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+Registry Registrant ID:
+Registrant Name: DATA REDACTED
+Registrant Organization: DATA REDACTED
+Registrant Street: DATA REDACTED
+Registrant City: DATA REDACTED
+Registrant State/Province: Gulshan
+Registrant Postal Code: DATA REDACTED
+Registrant Country: BD
+Registrant Phone: +1.4153197517
+Registrant Phone Ext: 
+
+### aminul-du.com
+   Creation Date: 2025-03-08T23:38:20Z
+   Registry Expiry Date: 2027-03-08T23:38:20Z
+   Registrar: PDR Ltd. d/b/a PublicDomainRegistry.com
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: DNS1.BDCOM.COM
+   Name Server: DNS2.BDCOM.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2025-03-08T23:38:20Z
+Registrar: PDR Ltd. d/b/a PublicDomainRegistry.com
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: Not Available From Registry
+Registrant Name: Md. Aminul Islam
+Registrant Organization: REDACTED FOR PRIVACY
+Registrant Street: 366/1, Irani House, Terokhadia (West Baypass)   
+Registrant City: Rajshahi
+Registrant State/Province: Rajpara
+Registrant Postal Code: 6000
+Registrant Country: BD
+Registrant Phone: +880.1911181863
+Registrant Phone Ext: 
+
+### 1of1.care
+Terms of Use: Access to WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the registry database. The data in this record is provided by Identity Digital or the Registry Operator for informational purposes only, and accuracy is not guaranteed. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Identity Digital except as reasonably necessary to register domain names or modify existing registrations. When using the Whois service, please consider the following: The Whois service is not a replacement for standard EPP commands to the SRS service. Whois is not considered authoritative for registered domain objects. The Whois service may be scheduled for downtime during production or OT&E maintenance periods. Queries to the Whois services are throttled. If too many queries are received from a single IP address within a specified time, the service will begin to reject further queries for a period of time to prevent disruption of Whois service access. Abuse of the Whois system through data mining is mitigated by detecting and limiting bulk query access from single sources. Where applicable, the presence of a [Non-Public Data] tag indicates that such data is not made publicly available due to applicable data privacy laws or requirements. Should you wish to contact the registrant, please refer to the Whois records available through the registrar URL listed above. Access to non-public data may be provided, upon request, where it can be re
+asonably confirmed that the requester holds a specific legitimate interest and a proper legal basis for accessing the withheld data. Access to this data provided by Identity Digital can be requested by submitting a request via the form found at https://www.identity.digital/about/policies/whois-layered-access/. The Registrar of Record identified in this output may have an RDDS service that can be queried for additional information on how to contact the Registrant, Admin, or Tech contact of the queried domain name. Identity Digital Inc. and Registry Operator reserve the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.
+
+### rajshahionline.com
+   Creation Date: 2020-11-30T04:50:02Z
+   Registry Expiry Date: 2026-11-30T04:50:02Z
+   Registrar: PDR Ltd. d/b/a PublicDomainRegistry.com
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: DNS1.BDCOM.COM
+   Name Server: DNS2.BDCOM.COM
+date of the domain name registrant's agreement with the sponsoring
+Creation Date: 2020-11-30T04:50:02Z
+Registrar: PDR Ltd. d/b/a PublicDomainRegistry.com
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: Not Available From Registry
+Registrant Name: Domain Admin
+Registrant Organization: Privacy Protect, LLC (PrivacyProtect.org)
+Registrant Street: 10 Corporate Drive   
+Registrant City: Burlington
+Registrant State/Province: MA
+Registrant Postal Code: 01803
+Registrant Country: US
+Registrant Phone: +1.8022274003
+Registrant Phone Ext: 
+
+### rajshahionline.net
+date of the domain name registrant's agreement with the sponsoring
+  (no whois data)
+
+### rajshahionline.com.bd
+  (no whois data)
+
+### aiguru.com
+   Creation Date: 1999-12-02T03:37:18Z
+   Registry Expiry Date: 2026-12-02T03:37:18Z
+   Registrar: Spaceship, Inc.
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: LAUNCH1.SPACESHIP.NET
+   Name Server: LAUNCH2.SPACESHIP.NET
+date of the domain name registrant's agreement with the sponsoring
+  (no whois data)
+

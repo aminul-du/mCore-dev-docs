@@ -1,0 +1,15 @@
+# G09 · Firewall isolation (local read-only)
+# Timestamp: 2026-09-19T19:14:27Z
+
+
+# Local listening ports:
+State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+LISTEN 0      2048        127.0.0.1:8787      0.0.0.0:*   
+LISTEN 0      511              [::]:80           [::]:*   
+LISTEN 0      511                 *:3000            *:*   
+
+# Cloud firewall requires cloud exports — status: UNKNOWN

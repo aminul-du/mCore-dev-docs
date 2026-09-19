@@ -1,0 +1,13 @@
+# G07 · IPAM and overlap (local observation)
+# Timestamp: 2026-09-19T19:14:27Z
+
+lo               UNKNOWN        127.0.0.1/8 10.255.255.254/32 ::1/128 
+eth0             UP             172.23.180.160/20 fe80::215:5dff:fe1a:b786/64 
+
+lo 127.0.0.1/8
+lo 10.255.255.254/32
+eth0 172.23.180.160/20
+lo ::1/128
+eth0 fe80::215:5dff:fe1a:b786/64
+
+# Production IPAM requires cloud exports — status: UNKNOWN

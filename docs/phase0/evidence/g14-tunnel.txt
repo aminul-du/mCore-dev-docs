@@ -1,0 +1,9 @@
+# G14 · Tunnel connectivity probe
+# Timestamp: 2026-09-19T19:14:27Z
+
+A record:
+
+HEAD response:
+  no response
+
+# Status: NOT VERIFIED — requires Cloudflare tunnel status export.

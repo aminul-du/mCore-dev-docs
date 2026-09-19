@@ -1,0 +1,187 @@
+# G05 · DNS records (A/AAAA/CNAME/MX/TXT/CAA)
+# Timestamp: 2026-09-19T19:14:27Z
+
+### meticulouscore.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### meticulouscore.net
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### meticulouscore.dev
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcore360.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoreacademy.com
+  A: 172.67.178.244|104.21.17.252|
+  AAAA: 2606:4700:3033::ac43:b2f4|2606:4700:3033::6815:11fc|
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoreai.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoreai.cloud
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoreai.dev
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcorefabric.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoremesh.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoreshield.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcorecare.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### mcoreprime.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### kotlinbrain.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### shorbornoai.com
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### shorborno.ai
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### sorbornoai.com
+  A: 172.67.193.16|104.21.76.106|
+  AAAA: 2606:4700:3035::ac43:c110|2606:4700:3036::6815:4c6a|
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### aminul-du.com
+  A: 46.137.193.114|
+  AAAA: none
+  CNAME: none
+  MX: 10 ALT4.ASPMX.L.GOOGLE.com.|5 ALT2.ASPMX.L.GOOGLE.com.|10 ALT3.ASPMX.L.GOOGLE.com.|1 ASPMX.L.GOOGLE.com.|5 ALT1.ASPMX.L.GOOGLE.com.|
+  TXT: "google-site-verification=IArZaWjh_QGDxUN3LFOgJb_zQmvSZ6RXk24yXDTHrsI"|
+  CAA: none
+
+### 1of1.care
+  A: 76.223.105.230|13.248.243.5|
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### rajshahionline.com
+  A: 114.31.0.72|
+  AAAA: none
+  CNAME: none
+  MX: 5 ALT1.ASPMX.L.GOOGLE.com.|10 ALT3.ASPMX.L.GOOGLE.com.|10 ALT4.ASPMX.L.GOOGLE.com.|5 ALT2.ASPMX.L.GOOGLE.com.|1 ASPMX.L.GOOGLE.com.|
+  TXT: "v=spf1 +a +mx +ip4:114.31.0.72 ?all"|
+  CAA: none
+
+### rajshahionline.net
+  A: none
+  AAAA: none
+  CNAME: none
+  MX: none
+  TXT: none
+  CAA: none
+
+### rajshahionline.com.bd
+  A: 103.16.74.74|
+  AAAA: none
+  CNAME: none
+  MX: 10 mail.rajshahionline.com.bd.|
+  TXT: "v=spf1 +a +mx +ip4:103.16.74.74 ?all"|
+  CAA: none
+
+### aiguru.com
+  A: 52.40.42.113|44.232.173.249|
+  AAAA: none
+  CNAME: none
+  MX: 0 mx1.efwd.spaceship.net.|0 mx2.efwd.spaceship.net.|
+  TXT: "v=spf1 include:spf.efwd.spaceship.net ~all"|
+  CAA: none
+
