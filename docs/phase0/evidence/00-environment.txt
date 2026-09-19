@@ -1,0 +1,15 @@
+# Environment · 2026-09-19T18:10:44Z
+
+Linux DESKTOP-MKKPFA3 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 GNU/Linux
+
+lo               UNKNOWN        127.0.0.1/8 10.255.255.254/32 ::1/128 
+eth0             UP             172.23.180.160/20 fe80::215:5dff:fe1a:b786/64 
+
+State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+LISTEN 0      2048        127.0.0.1:8787      0.0.0.0:*   
+LISTEN 0      511              [::]:80           [::]:*   
+LISTEN 0      511                 *:3000            *:*   

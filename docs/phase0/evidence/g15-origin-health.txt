@@ -1,0 +1,10 @@
+# http://127.0.0.1:8787
+HTTP/1.1 405 Method Not Allowed
+date: Sat, 19 Sep 2026 18:11:26 GMT
+server: uvicorn
+allow: GET
+content-length: 31
+content-type: application/json
+
+
+{"status":"ok","time":"2026-09-19T18:11:26.964269+00:00","pid":6433}

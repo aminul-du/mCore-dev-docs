@@ -1,0 +1,21 @@
+gate	label	evidence	status
+G01	Domain ownership	g01-g02-ownership-expiry.tsv	RUN-REVIEW
+G02	Registrar and expiry	g01-g02-ownership-expiry.tsv	RUN-REVIEW
+G03	DNS delegation	g03-nameservers.tsv	RUN-REVIEW
+G04	DNSSEC	g04-dnssec.tsv	RUN-REVIEW
+G05	DNS record correctness	g05-g06-records.txt	RUN-REVIEW
+G06	IPv4/IPv6	g05-g06-records.txt	RUN-REVIEW
+G07	IPAM and overlap	(pending cloud exports)	NOT-VERIFIED
+G08	Network routing	(pending cloud exports)	NOT-VERIFIED
+G09	Firewall isolation	(pending local review)	NOT-VERIFIED
+G10	TLS	g10-tls.txt	RUN-REVIEW
+G11	Authentication	(pending)	NOT-VERIFIED
+G12	Authorization	(pending)	NOT-VERIFIED
+G13	Cloudflare configuration	(pending CF export)	NOT-VERIFIED
+G14	Tunnel connectivity	(pending)	NOT-VERIFIED
+G15	Origin health	g15-origin-health.txt	RUN-REVIEW
+G16	Service persistence	(pending)	NOT-VERIFIED
+G17	Observability	(pending)	NOT-VERIFIED
+G18	Backup and recovery	(pending)	NOT-VERIFIED
+G19	Rollback	(pending)	NOT-VERIFIED
+G20	AIS acceptance	(pending sign-off)	NOT-VERIFIED
