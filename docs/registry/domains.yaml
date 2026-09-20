@@ -1,0 +1,29 @@
+# MCore 2050 — Canonical Domains Registry
+version: "2.2.0"
+phase: 0
+authority: AIS
+baseline: "Golden Master v2.1.2"
+domains:
+  - { domain: meticulouscore.com,    role: corporate-identity,             layer: corporate,      status: unverified }
+  - { domain: meticulouscore.net,    role: corporate-defensive,            layer: corporate,      status: unverified }
+  - { domain: meticulouscore.dev,    role: engineering,                    layer: corporate,      status: unverified }
+  - { domain: mcore360.com,          role: operations-control-observability, layer: operational,  status: unverified, immediate_hostname: engine.mcore360.com }
+  - { domain: mcoreacademy.com,      role: academy-education,              layer: product,        status: unverified }
+  - { domain: mcoreai.com,           role: ai-public-product,              layer: product,        status: unverified }
+  - { domain: mcoreai.cloud,         role: ai-cloud-runtime,               layer: product,        status: unverified }
+  - { domain: mcoreai.dev,           role: ai-developer-docs,              layer: product,        status: unverified }
+  - { domain: mcorefabric.com,       role: infrastructure-fabric,          layer: infrastructure, status: unverified }
+  - { domain: mcoremesh.com,         role: network-mesh,                   layer: infrastructure, status: unverified }
+  - { domain: mcoreshield.com,       role: security-protection,            layer: infrastructure, status: unverified }
+  - { domain: mcorecare.com,         role: care-ecosystem,                 layer: product,        status: unverified }
+  - { domain: mcoreprime.com,        role: media-cdn-ott-commerce,         layer: product,        status: unverified }
+  - { domain: kotlinbrain.com,       role: independent-dev-ai,             layer: independent,    status: unverified }
+  - { domain: shorbornoai.com,       role: shorbornoai-canonical,          layer: product,        status: unverified }
+  - { domain: shorborno.ai,          role: redirect-short-identity,        layer: product,        status: unverified, approval_required: true }
+  - { domain: sorbornoai.com,        role: defensive-redirect,             layer: product,        status: unverified, approval_required: true }
+  - { domain: aminul-du.com,         role: founder-digital-hq,             layer: founder,        status: unverified }
+  - { domain: 1of1.care,             role: independent-care,               layer: independent,    status: unverified }
+  - { domain: rajshahionline.com,    role: regional-business,              layer: independent,    status: unverified }
+  - { domain: rajshahionline.net,    role: regional-alternate,             layer: independent,    status: unverified }
+  - { domain: rajshahionline.com.bd, role: regional-bangladesh,            layer: independent,    status: unverified }
+  - { domain: aiguru.com,            role: inventory-candidate,            layer: candidate,      status: unverified }

@@ -1,0 +1,16 @@
+{
+  "timestamp": "/srv/mCore_dev_docs/docs/phase1/evidence/audit-20260920T100930Z.json",
+  "host": "DESKTOP-MKKPFA3",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "tools": {
+    "git": true,
+    "bash": true,
+    "curl": true,
+    "python3": true,
+    "jq": true,
+    "dig": true,
+    "whois": true,
+    "openssl": true,
+    "gh": true
+  }
+}

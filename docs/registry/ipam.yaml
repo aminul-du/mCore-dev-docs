@@ -1,0 +1,8 @@
+# MCore 2050 — Canonical IPAM Registry
+version: "2.2.0"
+phase: 0
+prefixes: []
+allocations: []
+environments: [local, dev, lab, test, stage, prod, edge, demo]
+track: [ipv4, ipv6, public_private, vpc_vnet_subnet, vrfs, nat, zones, interfaces]
+forbidden_in_phase_0: [allocate_production_ip, advertise_routes, modify_bgp]

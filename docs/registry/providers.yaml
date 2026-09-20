@@ -1,0 +1,13 @@
+# MCore 2050 — Provider Adapter Contracts
+version: "2.2.0"
+phase: 0
+principle: "Providers are adapters, not owners of intent."
+rules:
+  - "Adapters translate approved intent."
+  - "No silent cross-provider changes."
+adapters:
+  - { id: cloudflare, category: edge }
+  - { id: gcp,        category: cloud }
+  - { id: aws,        category: cloud }
+  - { id: private,    category: on-prem }
+  - { id: local,      category: dev }

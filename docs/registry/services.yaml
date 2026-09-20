@@ -1,0 +1,18 @@
+# MCore 2050 — Services Registry
+version: "2.2.0"
+phase: 0
+services:
+  - id: engine
+    hostname: engine.mcore360.com
+    origin: "127.0.0.1:8787"
+    access: "Cloudflare Access + MFA"
+    connectivity: "Cloudflare Tunnel"
+    environment: prod
+    status: proposed
+    exposure: authenticated
+    forbidden:
+      - public inbound 8787
+      - unauthenticated /status
+      - unauthenticated /backups
+      - unauthenticated /manifest
+      - unauthenticated /dashboard

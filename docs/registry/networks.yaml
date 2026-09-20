@@ -1,0 +1,14 @@
+# MCore 2050 — Canonical Networks Registry
+version: "2.2.0"
+phase: 0
+providers:
+  - { id: cloudflare, role: dns-edge-zerotrust }
+  - { id: gcp,        role: preferred-initial-cloud }
+  - { id: aws,        role: cloud }
+  - { id: private,    role: on-prem }
+  - { id: local,      role: dev-workstation }
+rules:
+  - "Cloudflare Tunnel ≠ universal multi-cloud routing."
+  - "No full-mesh by default."
+  - "Least-privilege connectivity."
+  - "No Phase 0 provisioning."

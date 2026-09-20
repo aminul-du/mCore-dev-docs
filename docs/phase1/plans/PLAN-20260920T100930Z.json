@@ -1,0 +1,22 @@
+{
+  "plan_id": "PLAN-20260920T100930Z",
+  "created": "20260920T100930Z",
+  "authority": "AIS",
+  "baseline": "Golden Master v2.1.2",
+  "requires_approval": true,
+  "domains_count": 0,
+  "phases": [
+    {"phase":1,"name":"Canonical architecture","mode":"design-only","destructive":false,"requires_credentials":[],"rollback":"git revert"},
+    {"phase":2,"name":"Secure vertical slice","mode":"implement","destructive":false,"requires_credentials":["cloudflare_api_token","cf_account_id","cf_zone_mcore360"],"rollback":"delete_tunnel+revert_dns+revert_access"},
+    {"phase":3,"name":"Product onboarding","mode":"implement","destructive":false,"requires_credentials":["per_product"],"rollback":"per_product"},
+    {"phase":4,"name":"Multi-cloud connectivity","mode":"implement","destructive":false,"requires_credentials":["gcp_service_account","aws_iam_role"],"rollback":"delete_links"},
+    {"phase":5,"name":"Intelligent operations","mode":"incremental","destructive":false,"requires_credentials":[],"rollback":"disable_features"}
+  ],
+  "constraints": {
+    "no_automatic_git_push": true,
+    "no_destructive_defaults": true,
+    "srv_mcore_out_of_scope": true,
+    "preserve_fastapi_doget_engine": true,
+    "no_public_port_8787": true
+  }
+}

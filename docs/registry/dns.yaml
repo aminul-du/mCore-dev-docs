@@ -1,0 +1,12 @@
+# MCore 2050 — Canonical DNS Registry
+version: "2.2.0"
+phase: 0
+zones: []
+verify: [registrar_ownership, registry_delegation, authoritative_ns,
+         dnssec, records, caa, mx_spf_dkim_dmarc, cert_coverage]
+rules:
+  - "Use authoritative + recursive checks."
+  - "Check negatives (NXDOMAIN, unintended wildcard)."
+  - "Do not publish private addresses in public DNS."
+  - "Do not enable DNSSEC without validated rollback."
+  - "Do not auto-overwrite live DNS."
