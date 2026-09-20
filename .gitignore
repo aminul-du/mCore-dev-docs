@@ -15,3 +15,6 @@ __pycache__/
 logs/
 docs/phase1/plans/
 docs/phase1/evidence/
+
+# mCore — approval records (never commit — sensitive authorization)
+approvals/
