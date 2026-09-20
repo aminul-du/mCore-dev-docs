@@ -9,3 +9,9 @@ venv/
 .venv/
 __pycache__/
 *.py[cod]
+
+# mCore Phase 1 — local runtime state
+.mcore-state/
+logs/
+docs/phase1/plans/
+docs/phase1/evidence/
