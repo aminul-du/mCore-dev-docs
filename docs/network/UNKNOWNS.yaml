@@ -1,0 +1,48 @@
+version: "1.0.0"
+date: "2026-09-29"
+authority: AIS
+classification: unknown
+
+register:
+  - id: U01
+    topic: control_plane_cidr
+    impact: architecture_gap
+    owner: AIS
+  - id: U02
+    topic: live_edge_sites
+    impact: site_cards_empty
+    owner: AIS
+  - id: U03
+    topic: routing_protocol_per_site
+    impact: routing_policy_undefined
+    owner: AIS
+  - id: U04
+    topic: make_deploy_zero_gap_impl
+    impact: documentation_only
+    owner: AIS_AI
+  - id: U05
+    topic: cloudflare_zone_fd_mapping
+    impact: ingress_placement
+    owner: AIS
+  - id: U06
+    topic: domains_registration_status
+    impact: registry_says_unverified
+    owner: AIS
+  - id: U07
+    topic: control_plane_hosting
+    impact: unspecified
+    owner: AIS
+  - id: U08
+    topic: emergency_management_path
+    impact: not_designed
+    owner: AIS
+  - id: U09
+    topic: backup_approver
+    impact: continuity_risk
+    owner: AIS
+  - id: U10
+    topic: compliance_regime
+    impact: policy_constraints
+    owner: AIS
+
+rule: "No unknown is fabricated into a value."

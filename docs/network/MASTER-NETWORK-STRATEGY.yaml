@@ -1,0 +1,75 @@
+version: "1.1.0"
+date: "2026-09-29"
+authority: AIS
+status: master-template
+classification: reported
+mandatory: true
+
+address_space:
+  root: 10.0.0.0/16
+  subdivision: /20
+  count: 16
+
+principle: "Control Plane decides and governs. Edge executes and protects itself."
+
+domain_contract:
+  - address_allocation
+  - identity
+  - dependencies
+  - ingress_policy
+  - egress_policy
+  - routing_policy
+  - health_check
+  - failure_detection
+  - expected_behavior
+  - automatic_recovery
+  - rollback
+  - evidence
+  - ci_cd_validation
+  - security_gate
+  - deployment
+  - post_deployment_validation
+  - monitoring
+  - drift_detection
+
+deployment_lifecycle:
+  stages:
+    - preflight
+    - source_validation
+    - schema_validation
+    - security_validation
+    - dependency_validation
+    - build
+    - lab_deployment
+    - topology_validation
+    - baseline
+    - policy_deployment
+    - attack_simulation
+    - chaos_testing
+    - twamp_validation
+    - routing_validation
+    - security_validation
+    - performance_validation
+    - evidence_collection
+    - artifact_creation
+    - artifact_integrity_verification
+    - lab_cleanup
+    - promotion_gate
+    - backup
+    - production_plan
+    - production_deployment
+    - post_deployment_validation
+    - monitoring_confirmation
+    - drift_registration
+    - final_evidence_report
+
+master_rule:
+  - "No PASS without evidence."
+  - "No production promotion without validation."
+  - "No uncontrolled agent action."
+  - "No hidden network dependency."
+
+references:
+  failure_domains: FAILURE-DOMAINS.yaml
+  address_plan: ../registry/ipam.yaml
+  unknowns: UNKNOWNS.yaml

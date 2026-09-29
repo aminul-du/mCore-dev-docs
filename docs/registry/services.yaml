@@ -1,6 +1,8 @@
-# MCore 2050 — Services Registry
-version: "2.2.0"
-phase: 0
+version: "1.0.0"
+date: "2026-09-29"
+authority: AIS
+classification: proposed
+
 services:
   - id: engine
     hostname: engine.mcore360.com
@@ -9,10 +11,10 @@ services:
     connectivity: "Cloudflare Tunnel"
     environment: prod
     status: proposed
-    exposure: authenticated
-    forbidden:
-      - public inbound 8787
-      - unauthenticated /status
-      - unauthenticated /backups
-      - unauthenticated /manifest
-      - unauthenticated /dashboard
+    exposure_policy: authenticated
+    forbidden_exposures:
+      - "public inbound 8787"
+      - "unauthenticated /status"
+      - "unauthenticated /backups"
+      - "unauthenticated /manifest"
+      - "unauthenticated /dashboard"

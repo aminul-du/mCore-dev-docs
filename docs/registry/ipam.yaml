@@ -1,8 +1,35 @@
-# MCore 2050 — Canonical IPAM Registry
-version: "2.2.0"
-phase: 0
-prefixes: []
-allocations: []
-environments: [local, dev, lab, test, stage, prod, edge, demo]
-track: [ipv4, ipv6, public_private, vpc_vnet_subnet, vrfs, nat, zones, interfaces]
-forbidden_in_phase_0: [allocate_production_ip, advertise_routes, modify_bgp]
+version: "1.0.0"
+date: "2026-09-29"
+authority: AIS
+classification: reported
+address_space: 10.0.0.0/16
+subdivision: /20
+total_blocks: 16
+
+allocations:
+  - { cidr: 10.0.0.0/20,   fd: FD-01, name: kernel-host }
+  - { cidr: 10.0.16.0/20,  fd: FD-02, name: network-tunnels }
+  - { cidr: 10.0.32.0/20,  fd: FD-03, name: rust-api }
+  - { cidr: 10.0.48.0/20,  fd: FD-04, name: python-ai }
+  - { cidr: 10.0.64.0/20,  fd: FD-05, name: frontend }
+  - { cidr: 10.0.80.0/20,  fd: FD-06, name: cicd }
+  - { cidr: 10.0.96.0/20,  fd: FD-07, name: observability }
+  - { cidr: 10.0.112.0/20, fd: FD-08, name: data-db }
+  - { cidr: 10.0.128.0/20, fd: FD-09, name: backup-dr }
+  - { cidr: 10.0.144.0/20, fd: FD-10, name: agent-mcp }
+  - { cidr: 10.0.160.0/20, fd: FD-11, name: secrets-identity }
+  - { cidr: 10.0.176.0/20, fd: FD-12, name: dns-mesh }
+  - { cidr: 10.0.192.0/20, fd: FD-13, name: cdn-edge }
+  - { cidr: 10.0.208.0/20, fd: FD-14, name: web-vitals-ux }
+  - { cidr: 10.0.224.0/20, fd: FD-15, name: governance-harness }
+  - { cidr: 10.0.240.0/20, fd: FD-00, name: fabric-control, reserved: true }
+
+rules:
+  - "No allocations outside this plan without exception."
+  - "Control Plane CIDR is out of scope (separate cloud)."
+  - "Every allocation must reference its failure domain."
+
+forbidden_in_phase_0:
+  - allocate_production_ip
+  - advertise_routes
+  - modify_bgp_sessions

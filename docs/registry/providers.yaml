@@ -1,13 +1,18 @@
-# MCore 2050 — Provider Adapter Contracts
-version: "2.2.0"
-phase: 0
+version: "1.0.0"
+date: "2026-09-29"
+authority: AIS
+classification: proposed
+
 principle: "Providers are adapters, not owners of intent."
+
 rules:
   - "Adapters translate approved intent."
   - "No silent cross-provider changes."
+  - "Every adapter change produces evidence."
+
 adapters:
-  - { id: cloudflare, category: edge }
-  - { id: gcp,        category: cloud }
+  - { id: cloudflare, category: edge, notes: "DNS, DNSSEC, TLS, WAF, DDoS, Access, Tunnel, Edge routing, Rate limit, Telemetry." }
+  - { id: gcp,        category: cloud, notes: "Preferred initial cloud. Contracts must remain portable." }
   - { id: aws,        category: cloud }
   - { id: private,    category: on-prem }
   - { id: local,      category: dev }
