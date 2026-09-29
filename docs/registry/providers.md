@@ -1,4 +1,5 @@
 # MCore Provider Adapter Contracts
 
-**Principle:** Providers are adapters, not owners of intent.
-**Rule:** No silent cross-provider changes.
+Providers are adapters, not owners of intent.
+No silent cross-provider changes.
+Every adapter change produces evidence.

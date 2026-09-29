@@ -2,7 +2,6 @@ version: "1.0.0"
 date: "2026-09-29"
 authority: AIS
 classification: proposed
-
 services:
   - id: engine
     hostname: engine.mcore360.com
@@ -11,10 +10,5 @@ services:
     connectivity: "Cloudflare Tunnel"
     environment: prod
     status: proposed
-    exposure_policy: authenticated
-    forbidden_exposures:
-      - "public inbound 8787"
-      - "unauthenticated /status"
-      - "unauthenticated /backups"
-      - "unauthenticated /manifest"
-      - "unauthenticated /dashboard"
+    forbidden_exposures: [public_8787, unauth_status, unauth_backups,
+      unauth_manifest, unauth_dashboard]

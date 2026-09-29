@@ -2,26 +2,15 @@ version: "1.0.0"
 date: "2026-09-29"
 authority: AIS
 classification: reported
-
-environments:
-  - local
-  - dev
-  - lab
-  - test
-  - stage
-  - prod
-  - edge
-  - demo
-
+environments: [local, dev, lab, test, stage, prod, edge, demo]
 providers:
   - { id: cloudflare, role: dns-edge-zerotrust }
   - { id: gcp,        role: preferred-initial-cloud }
   - { id: aws,        role: cloud }
   - { id: private,    role: on-prem }
   - { id: local,      role: dev-workstation }
-
 rules:
-  - "Cloudflare Tunnel is not a universal replacement for routed multi-cloud connectivity."
+  - "Cloudflare Tunnel is not a universal replacement for routed multi-cloud."
   - "Do not create full-mesh by default."
   - "Least-privilege connectivity."
   - "No Phase 0 provisioning."

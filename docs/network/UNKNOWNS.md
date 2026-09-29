@@ -1,16 +1,16 @@
 # MCore Unknown Register
 
-| # | Unknown | Impact | Owner |
-|---|---------|--------|-------|
-| 1 | Control Plane CIDR | Not defined | AIS |
-| 2 | Live Edge sites (count, location) | Site cards empty | AIS |
-| 3 | Routing protocol per site | Routing policy per site | AIS |
-| 4 | `make deploy-zero-gap` implementation | Documentation only | AIS + AI |
-| 5 | Cloudflare zone ↔ FD mapping | Tunnel ingress placement | AIS |
-| 6 | Which domains are truly registered | Registry says unverified | AIS |
-| 7 | Control Plane hosting provider | Unspecified | AIS |
-| 8 | Emergency management path | Not designed | AIS |
-| 9 | Backup approver for AIS | Continuity risk | AIS |
-| 10 | Compliance regime (BD/global) | Policy constraints | AIS |
+| # | Unknown | Owner |
+|---|---------|-------|
+| U01 | Control Plane CIDR | AIS |
+| U02 | Live Edge sites | AIS |
+| U03 | Routing protocol per site | AIS |
+| U04 | make deploy-zero-gap impl | AIS+AI |
+| U05 | Cloudflare zone ↔ FD mapping | AIS |
+| U06 | Which domains truly registered | AIS |
+| U07 | Control Plane hosting provider | AIS |
+| U08 | Emergency management path | AIS |
+| U09 | Backup approver for AIS | AIS |
+| U10 | Compliance regime | AIS |
 
-**No unknown is fabricated into a value. All remain UNKNOWN.**
+No unknown is fabricated.

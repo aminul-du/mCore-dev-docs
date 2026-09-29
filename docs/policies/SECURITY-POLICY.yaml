@@ -2,27 +2,9 @@ version: "1.0.0"
 date: "2026-09-29"
 authority: AIS
 classification: reported
-
-foundation:
-  - zero_trust
-  - least_privilege
-  - default_deny
-  - identity_aware_access
-  - explicit_network_policy
-  - auditable_actions
-
-insufficient:
-  - cidr_separation_alone
-
-enforcement:
-  - nftables
-  - network_namespaces
-  - vrfs
-  - vlans
-  - wireguard
-  - mtls
-  - service_identities
-  - capability_controls
-  - host_isolation
-  - container_isolation
-  - application_authorization
+foundation: [zero_trust, least_privilege, default_deny,
+  identity_aware_access, explicit_network_policy, auditable_actions]
+insufficient: [cidr_separation_alone]
+enforcement: [nftables, network_namespaces, vrfs, vlans, wireguard,
+  mtls, service_identities, capability_controls, host_isolation,
+  container_isolation, application_authorization]

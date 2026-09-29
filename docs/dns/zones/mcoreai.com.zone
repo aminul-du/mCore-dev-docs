@@ -1,0 +1,21 @@
+; mCore DNS Zone — mcoreai.com · DRAFT
+; B01: RFC1918 (10.0.48.x) · B02: NS unverified
+; B03: No DNSSEC · B04: No IPv6 · B06: FD concentration
+$TTL 3600
+$ORIGIN mcoreai.com.
+@   IN  SOA ns1.mcoredns.com. admin.mcoredns.com. ( 2026092101 7200 3600 1209600 3600 )
+@   IN  NS  ns1.mcoredns.com.
+@   IN  NS  ns2.mcoredns.com.
+@   IN  NS  ns3.mcoredns.com.
+@   IN  A   10.0.48.1
+app     IN  A   10.0.48.10
+api     IN  A   10.0.48.11
+docs    IN  A   10.0.48.12
+mcp     IN  A   10.0.48.30
+smart   IN  A   10.0.48.20
+rca     IN  A   10.0.48.21
+collect IN  A   10.0.48.22
+@       IN  CAA 0 issue "letsencrypt.org"
+@       IN  CAA 0 iodef "mailto:security@mcoreai.com"
+@       IN  TXT "v=spf1 -all"
+_dmarc  IN  TXT "v=DMARC1; p=reject; rua=mailto:dmarc@mcoreai.com"

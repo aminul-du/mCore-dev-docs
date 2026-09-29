@@ -1,0 +1,20 @@
+version: "1.0.0"
+date: "2026-09-29"
+authority: AIS
+status: master-template
+classification: proposed
+mandatory: true
+design_principles:
+  - split_horizon_for_rfc1918
+  - dnssec_mandatory_public
+  - ipv6_mandatory_public
+  - caa_mandatory
+  - spf_dmarc_mandatory
+  - no_hardcoded_production_ips
+  - failure_domain_spread
+  - nameserver_ownership_verified
+zero_gap_rules:
+  block: [missing_soa, missing_ns, missing_dnssec_public, missing_aaaa_public,
+    missing_caa, missing_spf, missing_dmarc, private_ip_in_public]
+  review: [single_fd_concentration, counts_mismatch]
+validator: docs/dns/validate-zones.sh

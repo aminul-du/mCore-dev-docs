@@ -1,0 +1,14 @@
+version: "1.0.0"
+date: "2026-09-29"
+authority: AIS
+classification: mixed
+blockers:
+  - { id: B01, severity: P0, topic: private_ips_in_public_zone, status: unknown,
+      resolution_options: [internal_only, split_horizon, replace_with_public] }
+  - { id: B02, severity: P0, topic: nameserver_ownership,          status: unknown }
+  - { id: B03, severity: P1, topic: dnssec_absent,                status: not_implemented }
+  - { id: B04, severity: P1, topic: ipv6_absent,                  status: unknown }
+  - { id: B05, severity: P1, topic: count_mismatch,               status: unknown }
+  - { id: B06, severity: P1, topic: single_fd_concentration,      status: observed }
+  - { id: B07, severity: P1, topic: vault_claims_unverified,      status: unknown }
+  - { id: B08, severity: P2, topic: master_not_applied,           status: proposed }

@@ -3,166 +3,20 @@ date: "2026-09-29"
 authority: AIS
 classification: reported
 address_space: 10.0.0.0/16
-note_fd_00: "Reserved highest /20 for edge fabric control. Intentional."
-
 domains:
-  - id: FD-00
-    name: Network/Fabric Control
-    cidr: 10.0.240.0/20
-    function: routing/fabric
-    reserved: true
-    failure: [partition, route_loss]
-    detection: [bfd, routing, ebpf]
-    expected: path_failover
-    recovery: alternate_path
-    rollback: network_config_rollback
-
-  - id: FD-01
-    name: Kernel/Host
-    cidr: 10.0.0.0/20
-    function: host_platform
-    failure: [panic, oops]
-    detection: [pstore, kdump]
-    expected: host_recovery
-    recovery: reboot_recover
-    rollback: boot_snapshot
-
-  - id: FD-02
-    name: Network/Tunnels
-    cidr: 10.0.16.0/20
-    function: tunnels_nat
-    failure: [tunnel_loss]
-    detection: [conntrack, probes]
-    expected: secondary_tunnel
-    recovery: failover
-    rollback: nft_rollback
-
-  - id: FD-03
-    name: Rust/API
-    cidr: 10.0.32.0/20
-    function: api_fabric
-    failure: [panic, stall]
-    detection: [tracing]
-    expected: standby
-    recovery: blue_green
-    rollback: binary_swap
-
-  - id: FD-04
-    name: Python/AI
-    cidr: 10.0.48.0/20
-    function: ai_smart
-    failure: [worker_failure]
-    detection: [structlog, loki]
-    expected: restart_buffer
-    recovery: worker_recovery
-    rollback: venv_swap
-
-  - id: FD-05
-    name: Frontend
-    cidr: 10.0.64.0/20
-    function: ux_application
-    failure: [ssr, hydration]
-    detection: [pino, rum]
-    expected: static_fallback
-    recovery: service_recovery
-    rollback: asset_swap
-
-  - id: FD-06
-    name: CI/CD
-    cidr: 10.0.80.0/20
-    function: delivery
-    failure: [runner, artifact]
-    detection: [runner_logs]
-    expected: secondary_runner
-    recovery: rerun
-    rollback: pipeline_rollback
-
-  - id: FD-07
-    name: Observability
-    cidr: 10.0.96.0/20
-    function: telemetry
-    failure: [collector_failure]
-    detection: [otel_metrics]
-    expected: buffer_reexport
-    recovery: collector_recovery
-    rollback: tsdb_restore
-
-  - id: FD-08
-    name: Data/DB
-    cidr: 10.0.112.0/20
-    function: database
-    failure: [crash, lag]
-    detection: [pgwatch, audit]
-    expected: replica_promotion
-    recovery: db_recovery
-    rollback: pitr
-
-  - id: FD-09
-    name: Backup/DR
-    cidr: 10.0.128.0/20
-    function: backup
-    failure: [corruption, failure]
-    detection: [restic]
-    expected: retry_alert
-    recovery: repository_recovery
-    rollback: snapshot
-
-  - id: FD-10
-    name: Agent/MCP
-    cidr: 10.0.144.0/20
-    function: agents_tools
-    failure: [rogue_action]
-    detection: [siem, audit]
-    expected: revoke_isolate
-    recovery: capability_reset
-    rollback: token_revoke
-
-  - id: FD-11
-    name: Secrets/Identity
-    cidr: 10.0.160.0/20
-    function: identity_secrets
-    failure: [seal, leak]
-    detection: [vault_audit]
-    expected: rotation_isolation
-    recovery: recovery
-    rollback: snapshot
-
-  - id: FD-12
-    name: DNS/Mesh
-    cidr: 10.0.176.0/20
-    function: dns_service_discovery
-    failure: [zone_loss]
-    detection: [dns_monitoring]
-    expected: secondary_dns
-    recovery: zone_reload
-    rollback: zone_rollback
-
-  - id: FD-13
-    name: CDN/Edge
-    cidr: 10.0.192.0/20
-    function: ingress_edge
-    failure: [5xx, drift]
-    detection: [edge_probes]
-    expected: ingress_failover
-    recovery: restore
-    rollback: config_flip
-
-  - id: FD-14
-    name: Web Vitals/UX
-    cidr: 10.0.208.0/20
-    function: rum_ux
-    failure: [lcp_spike, inp_spike]
-    detection: [rum]
-    expected: graceful_degradation
-    recovery: telemetry_recovery
-    rollback: replay
-
-  - id: FD-15
-    name: Governance/Harness
-    cidr: 10.0.224.0/20
-    function: policy_evidence
-    failure: [gate_failure, evidence_failure]
-    detection: [harness]
-    expected: block_release
-    recovery: recollect_evidence
-    rollback: gate_reset
+  - { id: FD-00, name: "Network/Fabric Control", cidr: 10.0.240.0/20, function: routing/fabric, reserved: true }
+  - { id: FD-01, name: "Kernel/Host",            cidr: 10.0.0.0/20,   function: host_platform }
+  - { id: FD-02, name: "Network/Tunnels",        cidr: 10.0.16.0/20,  function: tunnels_nat }
+  - { id: FD-03, name: "Rust/API",               cidr: 10.0.32.0/20,  function: api_fabric }
+  - { id: FD-04, name: "Python/AI",              cidr: 10.0.48.0/20,  function: ai_smart }
+  - { id: FD-05, name: Frontend,                 cidr: 10.0.64.0/20,  function: ux_application }
+  - { id: FD-06, name: "CI/CD",                  cidr: 10.0.80.0/20,  function: delivery }
+  - { id: FD-07, name: Observability,            cidr: 10.0.96.0/20,  function: telemetry }
+  - { id: FD-08, name: "Data/DB",                cidr: 10.0.112.0/20, function: database }
+  - { id: FD-09, name: "Backup/DR",              cidr: 10.0.128.0/20, function: backup }
+  - { id: FD-10, name: "Agent/MCP",              cidr: 10.0.144.0/20, function: agents_tools }
+  - { id: FD-11, name: "Secrets/Identity",       cidr: 10.0.160.0/20, function: identity_secrets }
+  - { id: FD-12, name: "DNS/Mesh",               cidr: 10.0.176.0/20, function: dns_service_discovery }
+  - { id: FD-13, name: "CDN/Edge",               cidr: 10.0.192.0/20, function: ingress_edge }
+  - { id: FD-14, name: "Web Vitals/UX",          cidr: 10.0.208.0/20, function: rum_ux }
+  - { id: FD-15, name: "Governance/Harness",     cidr: 10.0.224.0/20, function: policy_evidence }

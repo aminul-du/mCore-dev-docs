@@ -1,33 +1,15 @@
-version: "1.0.0"
+version: "1.1.0"
 date: "2026-09-29"
 authority: AIS
-
+rule: "Every .md must have a .yaml twin. Missing twin = BLOCK."
 pairs:
-  - id: master-network-strategy
-    md: docs/network/MASTER-NETWORK-STRATEGY.md
-    yaml: docs/network/MASTER-NETWORK-STRATEGY.yaml
-  - id: failure-domains
-    md: docs/network/FAILURE-DOMAINS.md
-    yaml: docs/network/FAILURE-DOMAINS.yaml
-  - id: ipam
-    md: docs/registry/ipam.md
-    yaml: docs/registry/ipam.yaml
-  - id: networks
-    md: docs/registry/networks.md
-    yaml: docs/registry/networks.yaml
-  - id: providers
-    md: docs/registry/providers.md
-    yaml: docs/registry/providers.yaml
-  - id: services
-    md: docs/registry/services.md
-    yaml: docs/registry/services.yaml
-  - id: security-policy
-    md: docs/policies/SECURITY-POLICY.md
-    yaml: docs/policies/SECURITY-POLICY.yaml
-  - id: unknowns
-    md: docs/network/UNKNOWNS.md
-    yaml: docs/network/UNKNOWNS.yaml
-
-rules:
-  - "If either format missing → artifact incomplete."
-  - "If formats disagree → zero-gap FAILS → BLOCK raised."
+  - { id: master-network-strategy, md: docs/network/MASTER-NETWORK-STRATEGY.md, yaml: docs/network/MASTER-NETWORK-STRATEGY.yaml }
+  - { id: failure-domains,         md: docs/network/FAILURE-DOMAINS.md,         yaml: docs/network/FAILURE-DOMAINS.yaml }
+  - { id: unknowns,                md: docs/network/UNKNOWNS.md,                yaml: docs/network/UNKNOWNS.yaml }
+  - { id: ipam,                    md: docs/registry/ipam.md,                   yaml: docs/registry/ipam.yaml }
+  - { id: networks,                md: docs/registry/networks.md,               yaml: docs/registry/networks.yaml }
+  - { id: providers,               md: docs/registry/providers.md,              yaml: docs/registry/providers.yaml }
+  - { id: services,                md: docs/registry/services.md,               yaml: docs/registry/services.yaml }
+  - { id: security-policy,         md: docs/policies/SECURITY-POLICY.md,        yaml: docs/policies/SECURITY-POLICY.yaml }
+  - { id: master-dns-template,     md: docs/dns/MASTER-DNS-TEMPLATE.md,         yaml: docs/dns/MASTER-DNS-TEMPLATE.yaml }
+  - { id: dns-blockers,            md: docs/dns/BLOCKERS.md,                    yaml: docs/dns/BLOCKERS.yaml }

@@ -1,17 +1,19 @@
 # MCore Zero-Gap Manifest
 
-Every artifact exists in **two synchronized formats**:
+Every artifact has **two synchronized formats** (.md + .yaml).
+Missing twin → BLOCK.
 
-| Artifact | .md | .yaml |
-|----------|-----|-------|
-| Master Network Strategy | MASTER-NETWORK-STRATEGY.md | MASTER-NETWORK-STRATEGY.yaml |
-| Failure Domains | FAILURE-DOMAINS.md | FAILURE-DOMAINS.yaml |
-| IPAM | registry/ipam.md | registry/ipam.yaml |
-| Networks | registry/networks.md | registry/networks.yaml |
-| Providers | registry/providers.md | registry/providers.yaml |
-| Services | registry/services.md | registry/services.yaml |
-| Security Policy | policies/SECURITY-POLICY.md | policies/SECURITY-POLICY.yaml |
-| Unknowns | UNKNOWNS.md | UNKNOWNS.yaml |
+| # | Artifact |
+|---|----------|
+| 1 | master-network-strategy |
+| 2 | failure-domains |
+| 3 | unknowns |
+| 4 | ipam |
+| 5 | networks |
+| 6 | providers |
+| 7 | services |
+| 8 | security-policy |
+| 9 | master-dns-template |
+| 10 | dns-blockers |
 
-**Rule:** If either format is missing, the artifact is incomplete.
-**Rule:** If formats disagree, zero-gap FAILS and a BLOCK is raised.
+Full registry: ZERO-GAP-MANIFEST.yaml.
